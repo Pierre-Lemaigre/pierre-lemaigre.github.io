@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <ul class="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="exercice.html">Exercice</a></li>
-        <li><a href="https://www.meteor.com/">Favorite Website</a></li>
-    </ul>
-    <h1>Here is our Heading</h1>
-    <p>Paragraph 1 Paragraph 1 Paragraph 1 Paragraph 1</p>
-    <p>Paragraph 2 Paragraph 2 Paragraph 2 Paragraph 2</p>
-    <p>Paragraph 3 Paragraph 3 Paragraph 3 Paragraph 3</p>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Website</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body onload="init()">
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="exercice.html">Exercice</a></li>
+            <li><a href="https://www.meteor.com/">Favorite Website</a></li>
+        </ul>
+        <h1>Here is our Heading</h1>
+        <p>Paragraph 1 Paragraph 1 Paragraph 1 Paragraph 1</p>
+        <p>Paragraph 2 Paragraph 2 Paragraph 2 Paragraph 2</p>
+        <div>
+            <img id="first" alt="Une voiture" />
+        </div>
+        <div id="test">
+            <button type="button" onclick="greet()">Say Hello !</button>
+        </div>
+        <div id="container">
+            <p>Images test</p>
+            <img src="icons/flower1.png" alt="Une fleur" />
+            <img src="icons/flower1.png" alt="Une fleur" />
+            <img src="icons/flower1.png" alt="Une fleur" />
+            <img src="icons/flower1.png" alt="Une fleur" />
+            <img src="icons/flower1.png" alt="Une fleur" />
+        </div>
+        <div id="inerJs"></div>
+        <div>
+            <span id="new_element">
+                Here should appear our flower
+            </span>
+        </div>
+        <div>
+            <span id="rainbow" style="font-size: 25px;">
+                <span>Don't</span>
+                <span>worry be</span>
+                <span>H</span>
+                <span>A</span>
+                <span>P</span>
+                <span>P</span>
+                <span>Y</span>
+            </span>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>
