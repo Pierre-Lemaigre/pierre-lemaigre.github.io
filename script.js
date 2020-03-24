@@ -1,11 +1,7 @@
-// Following comments are used for eslint
-/* eslint-disable no-unused-vars */
+// Line used for eslint
 /* eslint-disable no-alert */
-
-// Js part
-function greet() {
-  window.alert('Hello Everybody!');
-}
+/* eslint-disable func-names */
+/* eslint-disable no-unused-vars */
 
 function init() {
   // Modifying src of image.
@@ -15,8 +11,7 @@ function init() {
   images[3].src = 'icons/flower2.png';
 
   // Adding html to html code by using js.
-  const inerJs = document.getElementById('inerJs');
-  inerJs.innerHTML = '<div><p>You are great!</p></div>';
+  const inerJs = document.getElementById('inerJs'); inerJs.innerHTML = '<div><p>You are great!</p></div>';
   // Create element with js then injecting in documents
   const image = document.createElement('img');
   image.src = 'icons/flower2.png';
@@ -28,5 +23,52 @@ function init() {
   const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'];
   for (let i = spans.length - 1; i > -1; i -= 1) {
     spans[i].style.color = colors[i];
+  }
+
+  // Flowers event on mouse over
+  const changeSrc = function (event) {
+    const actualEvent = event;
+    if (actualEvent.target.src) {
+      const filename = actualEvent.target.src.replace(/^.*[\\/]/, '');
+      if (filename === 'flower2.png') {
+        actualEvent.target.src = 'icons/flower1.png';
+      } else {
+        actualEvent.target.src = 'icons/flower2.png';
+      }
+    }
+  };
+
+  document.getElementById('event').addEventListener('mouseover', changeSrc);
+}
+
+
+// Function list item
+function addItem() {
+  // Variables setup with dom access
+  const item = document.getElementById('item').value;
+  const listUl = document.getElementById('list_items');
+  const liNode = document.createElement('li');
+  const importantCheck = document.getElementById('important_check').checked;
+  const grocerieCheck = document.getElementById('grocerie_check').checked;
+
+  // Create the li item and format style
+  liNode.appendChild(document.createTextNode(item));
+  if (importantCheck) {
+    liNode.style.color = 'red';
+  }
+  if (grocerieCheck) {
+    liNode.style['text-decoration'] = 'underline';
+  }
+  listUl.appendChild(liNode);
+}
+
+// Function remove item
+function removeItem() {
+  const itemId = Math.abs(document.getElementById('item_remove').value) - 1;
+  const listLi = document.getElementById('list_items').getElementsByTagName('li');
+  if (listLi.length > itemId) {
+    listLi[itemId].remove();
+  } else {
+    window.alert('Item doesn\'t exist!');
   }
 }
